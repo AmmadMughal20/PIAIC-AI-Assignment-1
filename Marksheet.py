@@ -43,17 +43,7 @@ def printing(student_name, student_class, subject_details): #function to print t
 
 
 def marksheet():  #Main function to start 
-    student_name = input("\nEnter your name: ")
-    student_class = input('\nEnter you class: ')
-
-    total_subjects = input("\nEnter total numbers of subjects to print on marksheet: ") #Total numbers of subjects to print on marksheet
-    if total_subjects.isdigit()==False:   #check if user entered a numeric value
-        print('please enter numeric value')
-        marksheet()
-    else:
-        print("\n******Enter details of your subjects******")
-        subject_details = subjectdetails(int(total_subjects))   #call to subjectdetails function to get details of all subjects from user
-        printing(student_name, student_class, subject_details)   #call to printing function to print the marksheet
-    return
+    student_name, student_class, total_subjects  = input("\nEnter your name: "), input('\nEnter you class: '), input("\nEnter total numbers of subjects to print on marksheet: ") #Total numbers of subjects to print on marksheet
+    print('please enter numeric value'); marksheet() if total_subjects.isdigit()==False else print("\n******Enter details of your subjects******"); subject_details = subjectdetails(int(total_subjects)); printing(student_name, student_class, subject_details); return   #call to subjectdetails function to get details of all subjects from user
 
 marksheet() #call to marksheet function to start program  
